@@ -78,3 +78,79 @@
     height: 40px;
     border-radius: 20px;
 }
+
+.main{
+    background-color: beige;
+    height: 100%;
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url(pexels-knownasovan-62693.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.card{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px; 
+    margin: 20px;   
+    width: 40vw;
+    background: url(pexels-codioful-7130566.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 40px;
+    border: 1px solid black;
+    box-shadow: 8px 8px 6px rgb(84, 81, 81);
+
+}
+.companyimage{
+    padding-bottom: 20px;
+}
+.companyimage img{
+    height:25vh;
+    width: 15vw;
+    background-color: aliceblue;
+    border-radius: 30px;
+    padding-bottom: 30px;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.text p{
+    color: rgb(110, 106, 106);
+    padding-left: 10px;
+}
+.text ul{
+    padding-left: 15px;
+    color: rgb(110, 106, 106);
+}
+.text .bottom{
+    display: flex;
+    justify-content: space-between;
+    gap: 2vw;
+    
+}
+.bottom #applybutton ,#learnmore{
+    font-size: 20px;
+    font-weight: bold;
+    width: 8vw;
+    height: 3.5vh;
+    border-radius: 15px;
+    background-color: white;
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    padding: 2px;
+    border-color: black;
+    box-shadow: 5px 5px 6px rgb(84, 81, 81);
+
+}
+
