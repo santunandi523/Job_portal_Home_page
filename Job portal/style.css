@@ -124,6 +124,8 @@
     background-color: aliceblue;
     border-radius: 30px;
     padding-bottom: 30px;
+
+    box-shadow: 4px 4px 6px black;
 }
 .text{
     display: flex;
