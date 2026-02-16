@@ -3,7 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+body{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(45deg,rgb(149, 227, 221),rgb(222, 158, 238),beige);
+}
 .header{
     height: 8vh;
     display: flex;
@@ -80,7 +84,6 @@
 }
 
 .main{
-    background-color: beige;
     height: 100%;
     width: 100%;
     padding-top: 20px;
@@ -88,24 +91,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url(pexels-knownasovan-62693.jpg);
-    background-size: cover;
-    background-position: center;
+    
 }
 .card{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 30px; 
     margin: 20px;   
     width: 40vw;
-    background: url(pexels-codioful-7130566.jpg);
+    height:min-content;
+    background:linear-gradient(45deg,rgb(215, 239, 238),rgb(253, 222, 188));
     background-position: center;
     background-size: cover;
     border-radius: 40px;
     border: 1px solid black;
-    box-shadow: 8px 8px 6px rgb(84, 81, 81);
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
 
 }
 .card:hover{
@@ -121,7 +123,7 @@
 .companyimage img{
     height:25vh;
     width: 15vw;
-    background-color: aliceblue;
+    background-color: white;
     border-radius: 30px;
     padding-bottom: 30px;
 
@@ -143,10 +145,12 @@
 .text .bottom{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 2vw;
     
 }
 .bottom #applybutton ,#learnmore{
+    margin-top: 10px;
     font-size: 20px;
     font-weight: bold;
     width: 8vw;
@@ -159,7 +163,7 @@
     text-align: center;
     padding: 2px;
     border-color: black;
-    box-shadow: 5px 5px 6px rgb(84, 81, 81);
+    box-shadow: 0px 0px 6px rgb(16, 16, 16);
 
 }
 #learnmore:hover {
@@ -172,6 +176,55 @@
   box-shadow:
     0 10px 20px rgba(0,0,0,0.19),
     0 6px 6px rgba(0,0,0,0.23);
+}
+.form {
+    width: 40vw;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.main-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.main-form label {
+    font-weight: bold;
+}
+
+.main-form input,
+.main-form select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    outline: none;
+}
+
+/* .main-form input:focus,
+.main-form select:focus {
+    border: 1px solid blueviolet;
+    box-shadow: 0 0 5px rgba(138,43,226,0.5);
+} */
+
+.main-form button {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 15px;
+    border: none;
+    background: blueviolet;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.main-form button:hover {
+    background: darkviolet;
 }
 
 
