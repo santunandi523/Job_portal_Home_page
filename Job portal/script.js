@@ -41,5 +41,49 @@ document.querySelector(".main-form").addEventListener('submit',async(e)=>{
     e.target.reset(); 
 });
 
+//search
 
-})
+    const headerSearch = document.getElementById("searchbar");
+    const roleSelect = document.getElementById("role");
+    const skillInput = document.getElementById("skill");
+    const companyInput = document.getElementById("company");
+    const searchBtn = document.getElementById("search");
+
+    const cards = document.querySelectorAll(".card");
+    searchBtn.addEventListener("click", filterJobs);
+
+    function filterJobs() {
+
+        let headerText = headerSearch.value.toLowerCase();
+        let roleText = roleSelect.options[roleSelect.selectedIndex]?.text.toLowerCase() || "";
+        let skillText = skillInput.value.toLowerCase();
+        let companyText = companyInput.value.toLowerCase();
+
+        cards.forEach(card => {
+
+            let cardText = card.innerText.toLowerCase();
+
+            let matchHeader = cardText.includes(headerText);
+            let matchRole = roleText === "--select--" || cardText.includes(roleText);
+            let matchSkill = cardText.includes(skillText);
+            let matchCompany = cardText.includes(companyText);
+
+            if (matchHeader && matchRole && matchSkill && matchCompany) {
+                card.style.display = "flex";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+    }
+
+    // Header search (live typing)
+    headerSearch.addEventListener("keyup", filterJobs);
+
+    // Form search button
+    searchBtn.addEventListener("click", filterJobs);
+
+
+
+});

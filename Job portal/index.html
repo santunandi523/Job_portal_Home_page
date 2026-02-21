@@ -39,10 +39,34 @@
     </div>
 
     <div class="main">
+
+        <div class="jobform">
+            <h2>Search for Job Role</h2>
+            <form id="searchjob">
+                <label for="role">Job Role</label>
+                <select name="role" id="role">
+                    <option value="0" selected disabled >--Select--</option>
+                    <option value="1">Frontend Developer</option>
+                    <option value="2">Software Developer</option> 
+                    <option value="3">Backend Developer</option>
+                    <option value="4">Advisor</option>
+                </select>
+                
+                <label for="skill">Skills</label>
+                <input type="text" placeholder=" e.g. React, Java,HTML etc" id="skill">
+                
+                <label for="company">Company</label>
+                <input type="text" placeholder=" e.g. amazon, flipkart etc" id="company">
+            </form>
+            <button type="submit" id="search">Search</button>
+        </div>
+
+
         <div class="card">
             <div class="text">
                 <h2>Job Details</h2>
                 <p>Software Developer </p>
+                <p class="company">Microsoft</p>
                 <h2>Requirement</h2>
                 <ul>
                     <li>Java</li>
@@ -51,7 +75,7 @@
                     <li>React</li>
                 </ul>
                 <div class="bottom">
-                    <button id="applybutton">Apply</button>
+                    <button class="applybutton">Apply</button>
                     <a href="learnmore" id="learnmore">Learn More</a>
                 </div>
             </div>
@@ -64,6 +88,7 @@
             <div class="text">
                 <h2>Job Details</h2>
                 <p>Frontend Developer </p>
+                <p class="company">amazone</p>
                 <h2>Requirement</h2>
                 <ul>
                     <li>HTML,CSS,Java Script</li>
@@ -72,7 +97,7 @@
                     
                 </ul>
                 <div class="bottom">
-                    <button id="applybutton">Apply</button>
+                    <button class="applybutton">Apply</button>
                     <a href="learnmore" id="learnmore">Learn More</a>
                 </div>
             </div>
@@ -85,6 +110,7 @@
             <div class="text">
                 <h2>Job Details</h2>
                 <p>Backend Developer </p>
+                <p class="company">intel</p>
                 <h2>Requirement</h2>
                 <ul>
                     <li>Java</li>
@@ -93,7 +119,7 @@
                     
                 </ul>
                 <div class="bottom">
-                    <button id="applybutton">Apply</button>
+                    <button class="applybutton">Apply</button>
                     <a href="learnmore" id="learnmore">Learn More</a>
                 </div>
             </div>
@@ -106,6 +132,7 @@
             <div class="text">
                 <h2>Job Details</h2>
                 <p>Advisor </p>
+                <p class="company">Meta</p>
                 <h2>Requirement</h2>
                 <ul>
                     <li>MBA</li>
@@ -114,7 +141,7 @@
                     
                 </ul>
                 <div class="bottom">
-                    <button id="applybutton">Apply</button>
+                    <button class="applybutton">Apply</button>
                     <a href="learnmore" id="learnmore">Learn More</a>
                 </div>
             </div>

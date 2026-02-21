@@ -67,7 +67,7 @@ body{
 .dropdown li a{
     display: block;
     color: rgb(1, 1, 1);
-    background-color: bisque;
+    background-color: rgb(27, 122, 255);
     border-radius: 5px;
     padding-left: 10px;
 }
@@ -88,13 +88,63 @@ body{
     width: 100%;
     padding-top: 20px;
     display: flex;
+    
     flex-direction: column;
     justify-content: center;
     align-items: center;
     
 }
+
+.jobform{
+    background-color: rgb(255, 255, 255);
+    margin:20px;
+    padding: 20px;
+    border-radius: 20px;
+    color: rgb(45, 45, 250);
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0px 0px 10px black;
+
+}
+
+.jobform:hover{
+    box-shadow: 5px 6px 10px rgb(107, 107, 107);
+
+}
+#searchjob{
+    display: flex;
+    /* flex-direction: column; */
+    font-size: large;
+
+    gap: 5px;
+}
+#searchjob input,select{
+    height: 25px;
+    padding: 5px;
+    border-radius:10px;
+}
+#search{
+    margin-top: 5px;
+    width: 5rem;
+    border-radius: 18px;
+    font-size: large;
+    height: 2rem;
+    font-weight: bold;
+    box-shadow: 0px 0px 6px black;
+
+    
+}
+#search:hover{
+    box-shadow: 5px 3px 10px grey;
+}
+
 .card{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     padding-left: 30px;
     padding-right: 30px;
@@ -108,6 +158,8 @@ body{
     border-radius: 40px;
     border: 1px solid black;
     box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    padding-bottom: 10px;
+    
 
 }
 .card:hover{
@@ -149,8 +201,11 @@ body{
     gap: 2vw;
     
 }
-.bottom #applybutton ,#learnmore{
+.bottom .applybutton ,#learnmore{
+    /* margin-bottom: 5px; */
+    position: relative;
     margin-top: 10px;
+    margin-bottom: 15px;
     font-size: 20px;
     font-weight: bold;
     width: 8vw;
@@ -171,7 +226,7 @@ body{
     0 10px 20px rgba(0,0,0,0.19),
     0 6px 6px rgba(0,0,0,0.23);
 }
-#applybutton:hover{
+.applybutton:hover{
     
   box-shadow:
     0 10px 20px rgba(0,0,0,0.19),
