@@ -122,7 +122,7 @@ body{
 
     gap: 5px;
 }
-#searchjob input,select{
+#searchjob input, #searchjob select{
     height: 25px;
     padding: 5px;
     border-radius:10px;
