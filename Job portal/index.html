@@ -2,164 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santu Website</title>
+    <title>Santu Job Portal</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="header">
-        <div class="headerleft">
-            <div class="logo">
-                <img src="naukrilogo.webp" alt="img" id="logo">
-                <p>Naukri Lelo Ji</p>
-            </div>
-            
-            <p><a href="home">Prepare</a></p>
-            <p><a href="participate">Participate</a></p>
-            <p><a href="Certification">Certification</a></p>
-            <p><input type="search" placeholder="Search for job" id="searchbar"></p>
-        </div>
-        <div class="headerRight">
-            <ul>
-            <li class="account">
-             <a href="#">Account</a>
-
-             <!-- DROPDOWN MENU -->
-             <ul class="dropdown">
-                  <li><a href="#">Profile</a></li>
-                  <li><a href="#">Log In</a></li>
-                  <li><a href="#">Settings</a></li>
-                  <li><a href="#">Help Line</a></li>
-                  <li><a href="#">Career Guidance</a></li>
-                </ul>
-         </li>
-        </ul>
-        <img src="pic my.jpg" alt="my pic">
-        </div>
-    </div>
 
     <div class="main">
-        <div class="card">
-            <div class="text">
-                <h2>Job Details</h2>
-                <p>Software Developer </p>
-                <h2>Requirement</h2>
-                <ul>
-                    <li>Java</li>
-                    <li>HTML,CSS,Java Script</li>
-                    <li>Springboot</li>
-                    <li>React</li>
-                </ul>
-                <div class="bottom">
-                    <button id="applybutton">Apply</button>
-                    <a href="learnmore" id="learnmore">Learn More</a>
+
+        <!-- Create Button -->
+        <button id="createJobBtn">+ Create Job</button>
+
+        <!-- Job Cards Container -->
+        <div id="jobContainer">
+
+            <!-- Sample Card -->
+            <div class="card">
+                <div class="text">
+                    <h2>Job Details</h2>
+                    <p>Software Developer</p>
+
+                    <h3>Requirements</h3>
+                    <ul>
+                        <li>Java</li>
+                        <li>Spring Boot</li>
+                        <li>React</li>
+                    </ul>
+
+                    <div class="bottom">
+                        <button class="applyBtn">Apply</button>
+                        <button class="updateBtn">Update</button>
+                        <button class="deleteBtn">Delete</button>
+                    </div>
+                </div>
+
+                <div class="companyimage">
+                    <img src="microsoft logo.webp" alt="Company Logo">
                 </div>
             </div>
-            <div class="companyimage">
-                <img src="microsoft logo.webp" alt="company logo">
-            </div>
-            
-        </div>
-        <div class="card">
-            <div class="text">
-                <h2>Job Details</h2>
-                <p>Frontend Developer </p>
-                <h2>Requirement</h2>
-                <ul>
-                    <li>HTML,CSS,Java Script</li>
-                    <li>React</li>
-                    <li>No prior Experience</li>
-                    
-                </ul>
-                <div class="bottom">
-                    <button id="applybutton">Apply</button>
-                    <a href="learnmore" id="learnmore">Learn More</a>
-                </div>
-            </div>
-            <div class="companyimage">
-                <img src="amazonelogo.png" alt="company logo">
-            </div>
-            
-        </div>
-                <div class="card">
-            <div class="text">
-                <h2>Job Details</h2>
-                <p>Backend Developer </p>
-                <h2>Requirement</h2>
-                <ul>
-                    <li>Java</li>
-                    <li>Mongodb</li>
-                    <li>Springboot</li>
-                    
-                </ul>
-                <div class="bottom">
-                    <button id="applybutton">Apply</button>
-                    <a href="learnmore" id="learnmore">Learn More</a>
-                </div>
-            </div>
-            <div class="companyimage">
-                <img src="intellogo.png" alt="company logo">
-            </div>
-            
-        </div>
-                <div class="card">
-            <div class="text">
-                <h2>Job Details</h2>
-                <p>Advisor </p>
-                <h2>Requirement</h2>
-                <ul>
-                    <li>MBA</li>
-                    <li>HTML,CSS</li>
-                    <li>Communication</li>
-                    
-                </ul>
-                <div class="bottom">
-                    <button id="applybutton">Apply</button>
-                    <a href="learnmore" id="learnmore">Learn More</a>
-                </div>
-            </div>
-            <div class="companyimage">
-                <img src="metalogo.jpg" alt="company logo">
-            </div>
-            
-        </div>                  
-        <br>
-        <h2>Submit Your Details</h2>
-        <br>
-        <div class="form">
-            <form class="main-form">
-                <label for="name">Name</label>
-                <input type="text" name="name" placeholder="Enter Name">
 
-                <label for="phonenumber">Phone no.</label>
-                <select name="country-code" id="country-code">
-                    <option value="select" disabled selected>--select--</option>
-                    <option value="+91">india +91</option>
-                    <option value="+12">US +12</option>
-                </select>
-                <input type="tel" name="phonenumber" maxlength="10">
-
-                <label for="email" >Email Id</label>
-                <input type="email" name="email" id="email" placeholder="email@gmail.com">
-
-                <label for="experience">Experience</label>
-                <select name="experience" id="experience" aria-placeholder ="select">
-                    <option value="select" disabled selected>--Select--</option>
-                    <option value="Intern">intern</option>
-                    <option value="front-developer">Frontend</option>
-                    <option value="back-developer">Backend</option>
-                </select>
-                
-                <label for="exp-year">Experience Year</label>
-                <input type="number" name="exp-year" id="exp-year" maxlength="2">
-
-                <button type="submit" id="submit">Submit</button>
-            </form>
-            
         </div>
-    
+
     </div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
