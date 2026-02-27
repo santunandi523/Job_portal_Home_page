@@ -2,99 +2,153 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Arial;
 }
 
-body{
-    min-height:100vh;
-    background: linear-gradient(45deg,#9de3dd,#de9eee,beige);
+/*NAVBAR */
+.header{
+    height:70px;
+    background:#333;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 50px;
+}
+.headerRight{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.headerleft{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
 
+.headerleft a{
+    text-decoration:none;
+    color:white;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+}
+
+/*SEARCH */
+#searchBar{
+    padding:8px 15px;
+    border-radius:20px;
+    border:none;
+    outline:none;
+}
+
+/* DROPDOWN */
+.account{
+    
+    position:relative;
+    list-style:none;
+}
+
+.account a{
+    text-decoration: none;
+    color: white;
+}
+
+.dropdown{
+    
+    display:none;
+    position:absolute;
+    background:white;
+    color:black;
+    padding:10px;
+    top:30px;
+}
+
+.dropdown li{
+    list-style:none;
+    padding:5px 0;
+}
+
+.dropdown li a{
+    text-decoration:none;
+    color:black;
+}
+
+.account:hover .dropdown{
+    display:block;
+}
+
+.headerRight img{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+}
+
+/* 🔵 MAIN */
+body{
+    background:linear-gradient(45deg,#9de3dd,#de9eee,beige);
 }
 
 .main{
+    padding:40px;
     display:flex;
     flex-direction:column;
     align-items:center;
 }
 
 #createJobBtn{
-    padding:12px 20px;
-    font-size:18px;
-    font-weight:bold;
+    padding:10px 20px;
     background:green;
     color:white;
     border:none;
     border-radius:20px;
     cursor:pointer;
-    margin-bottom:20px;
-}
-
-#createJobBtn:hover{
-    background:darkgreen;
 }
 
 .card{
+    width:600px;
+    background:white;
+    margin:20px 0;
+    padding:20px;
+    border-radius:20px;
     display:flex;
     justify-content:space-between;
-    align-items:center;
-    width:600px;
-    padding:20px;
-    margin:20px 0;
-    border-radius:20px;
-    background:white;
     box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
-
-.text{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
+.card ul{
+    padding: 10px;
 }
-
-.text p{
-    color:gray;
-}
-
-.text ul{
-    padding-left:20px;
-    color:gray;
-}
-
 .bottom{
+    margin-top:10px;
     display:flex;
     gap:10px;
-    margin-top:10px;
-}
-
-.applyBtn{
-    background:#3498db;
-    color:white;
 }
 
 .updateBtn{
     background:orange;
-    color:white;
+    border:none;
+    padding:5px 10px;
+    border-radius:10px;
+    cursor:pointer;
 }
 
 .deleteBtn{
     background:crimson;
-    color:white;
-}
-
-.bottom button{
-    padding:6px 12px;
     border:none;
+    padding:5px 10px;
     border-radius:10px;
     cursor:pointer;
-    font-weight:bold;
-}
-
-.bottom button:hover{
-    opacity:0.8;
 }
 
 .companyimage img{
     width:120px;
-    height:120px;
-    object-fit:contain;
 }

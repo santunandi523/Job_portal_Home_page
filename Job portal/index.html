@@ -7,15 +7,47 @@
 </head>
 <body>
 
+    <!-- 🔵 NAVBAR -->
+    <div class="header">
+
+        <div class="headerleft">
+            <div class="logo">
+                <img src="naukrilogo.webp" alt="logo">
+                <p>Naukri Lelo Ji</p>
+            </div>
+
+            <a href="#">Prepare</a>
+            <a href="#">Participate</a>
+            <a href="#">Certification</a>
+
+            <!-- 🔍 Search Bar -->
+            <input type="text" id="searchBar" placeholder="Search job title...">
+        </div>
+
+        <div class="headerRight">
+            <ul>
+                <li class="account">
+                    <a href="#">Account</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Log In</a></li>
+                        <li><a href="#">Settings</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <img src="pic my.jpg" alt="profile">
+        </div>
+
+    </div>
+
+
+    <!-- 🔵 MAIN CONTENT -->
     <div class="main">
 
-        <!-- Create Button -->
         <button id="createJobBtn">+ Create Job</button>
 
-        <!-- Job Cards Container -->
         <div id="jobContainer">
 
-            <!-- Sample Card -->
             <div class="card">
                 <div class="text">
                     <h2>Job Details</h2>
@@ -29,19 +61,17 @@
                     </ul>
 
                     <div class="bottom">
-                        <button class="applyBtn">Apply</button>
                         <button class="updateBtn">Update</button>
                         <button class="deleteBtn">Delete</button>
                     </div>
                 </div>
 
                 <div class="companyimage">
-                    <img src="microsoft logo.webp" alt="Company Logo">
+                    <img src="microsoft logo.webp">
                 </div>
             </div>
 
         </div>
-
     </div>
 
 <script src="script.js"></script>
