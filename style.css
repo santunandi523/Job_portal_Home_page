@@ -188,3 +188,21 @@ cursor:pointer;
 .companyimage img{
 width:120px;
 }
+
+.applyBtn{
+background:green;
+border:none;
+padding:5px 10px;
+border-radius:10px;
+cursor:pointer;
+color:white;
+}
+
+.learnBtn{
+background:#007bff;
+border:none;
+padding:5px 10px;
+border-radius:10px;
+cursor:pointer;
+color:white;
+}

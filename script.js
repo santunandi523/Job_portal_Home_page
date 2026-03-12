@@ -12,32 +12,48 @@ const submitJob=document.getElementById("submitJob");
 const jobContainer=document.getElementById("jobContainer");
 const searchBar=document.getElementById("searchBar");
 
-// HOME BUTTON
+let mode="browse";
+
+
+// HOME
 homeBtn.onclick=function(){
+
+mode="browse";   // reset mode
 
 startScreen.style.display="flex";
 jobForm.style.display="none";
 main.style.display="none";
 
-};
+updateButtons();  // refresh button visibility
+
+}
+
 
 // BROWSE JOBS
 browseBtn.onclick=function(){
 
+mode="browse";
+
 startScreen.style.display="none";
 main.style.display="flex";
 
-};
+updateButtons();
+
+}
+
 
 // POST JOB
 postBtn.onclick=function(){
 
+mode="post";
+
 startScreen.style.display="none";
 jobForm.style.display="flex";
 
-};
+}
 
-// SUBMIT JOB
+
+// CREATE JOB CARD
 submitJob.onclick=function(){
 
 let title=document.getElementById("jobTitle").value;
@@ -65,8 +81,13 @@ card.innerHTML=`
 <p class="eligibility">${eligibility}</p>
 
 <div class="bottom">
+
+<button class="applyBtn">Apply</button>
+<button class="learnBtn">Learn More</button>
+
 <button class="updateBtn">Update</button>
 <button class="deleteBtn">Delete</button>
+
 </div>
 
 </div>
@@ -82,7 +103,47 @@ jobContainer.appendChild(card);
 jobForm.style.display="none";
 main.style.display="flex";
 
-};
+updateButtons();
+
+}
+
+
+
+// SHOW BUTTONS BASED ON MODE
+function updateButtons(){
+
+let cards=document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+let apply=card.querySelector(".applyBtn");
+let learn=card.querySelector(".learnBtn");
+let update=card.querySelector(".updateBtn");
+let del=card.querySelector(".deleteBtn");
+
+if(mode==="browse"){
+
+apply.style.display="inline-block";
+learn.style.display="inline-block";
+
+update.style.display="none";
+del.style.display="none";
+
+}else{
+
+apply.style.display="none";
+learn.style.display="none";
+
+update.style.display="inline-block";
+del.style.display="inline-block";
+
+}
+
+});
+
+}
+
+
 
 // UPDATE + DELETE
 jobContainer.addEventListener("click",function(e){
@@ -110,6 +171,8 @@ if(newEl) el.innerText=newEl;
 }
 
 });
+
+
 
 // SEARCH
 searchBar.addEventListener("keyup",function(){
