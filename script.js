@@ -1,89 +1,136 @@
-document.addEventListener("DOMContentLoaded",()=>{
-document.querySelector(".main-form").addEventListener('submit',async(e)=>{
-    e.preventDefault();
-    let button=document.querySelector("#submit");
-    let name=document.querySelector('input[name="name"]').value;
-    if(name==""){
-        alert("Name can't be empty");
-    }
-    let phone=document.querySelector('input[name="phonenumber"]').value;
-    if(phone.length!=10){
-        alert("Phone no. can't be empty");
-    }
-    let email=document.querySelector('input[name="email"]').value;
-    if(email==""){
-        alert("email can't be empty");
-    }
-    let experience=document.querySelector('select[name="experience"]').value;
-    
-    let experienceYear=document.querySelector('input[name="exp-year"]').value;
-    
-    let countrycode=document.querySelector('select[name="country-code"]').value;
+document.addEventListener("DOMContentLoaded",function(){
 
-    let details={
-        name:name,
-        phone:countrycode+phone,
-        email:email,
-        experience:experience,
-        experienceYear:experienceYear
+const browseBtn=document.getElementById("browseBtn");
+const postBtn=document.getElementById("postBtn");
+const homeBtn=document.getElementById("homeBtn");
 
-    }
-    
-    button.innerHTML = "Submitting...";
+const startScreen=document.getElementById("startScreen");
+const jobForm=document.getElementById("jobForm");
+const main=document.getElementById("mainSection");
 
-    await new Promise(resolve => 
-        setTimeout(resolve, 2000)
-    );
+const submitJob=document.getElementById("submitJob");
+const jobContainer=document.getElementById("jobContainer");
+const searchBar=document.getElementById("searchBar");
 
-    button.innerHTML = "Submit";
-    console.log(details);
-    
-    e.target.reset(); 
+// HOME BUTTON
+homeBtn.onclick=function(){
+
+startScreen.style.display="flex";
+jobForm.style.display="none";
+main.style.display="none";
+
+};
+
+// BROWSE JOBS
+browseBtn.onclick=function(){
+
+startScreen.style.display="none";
+main.style.display="flex";
+
+};
+
+// POST JOB
+postBtn.onclick=function(){
+
+startScreen.style.display="none";
+jobForm.style.display="flex";
+
+};
+
+// SUBMIT JOB
+submitJob.onclick=function(){
+
+let title=document.getElementById("jobTitle").value;
+let desc=document.getElementById("jobDesc").value;
+let eligibility=document.getElementById("jobEligibility").value;
+let image=document.getElementById("jobImage").value;
+
+if(title==="") return;
+
+let card=document.createElement("div");
+card.classList.add("card");
+
+card.innerHTML=`
+
+<div class="text">
+
+<h2>Job Details</h2>
+
+<p>${title}</p>
+
+<h3>Description</h3>
+<p class="desc">${desc}</p>
+
+<h3>Eligibility</h3>
+<p class="eligibility">${eligibility}</p>
+
+<div class="bottom">
+<button class="updateBtn">Update</button>
+<button class="deleteBtn">Delete</button>
+</div>
+
+</div>
+
+<div class="companyimage">
+<img src="${image}">
+</div>
+
+`;
+
+jobContainer.appendChild(card);
+
+jobForm.style.display="none";
+main.style.display="flex";
+
+};
+
+// UPDATE + DELETE
+jobContainer.addEventListener("click",function(e){
+
+let card=e.target.closest(".card");
+
+if(e.target.classList.contains("deleteBtn")){
+card.remove();
+}
+
+if(e.target.classList.contains("updateBtn")){
+
+let title=card.querySelector(".text p");
+let newTitle=prompt("Update Title",title.innerText);
+if(newTitle) title.innerText=newTitle;
+
+let desc=card.querySelector(".desc");
+let newDesc=prompt("Update Description",desc.innerText);
+if(newDesc) desc.innerText=newDesc;
+
+let el=card.querySelector(".eligibility");
+let newEl=prompt("Update Eligibility",el.innerText);
+if(newEl) el.innerText=newEl;
+
+}
+
 });
 
-//search
+// SEARCH
+searchBar.addEventListener("keyup",function(){
 
-    const headerSearch = document.getElementById("searchbar");
-    const roleSelect = document.getElementById("role");
-    const skillInput = document.getElementById("skill");
-    const companyInput = document.getElementById("company");
-    const searchBtn = document.getElementById("search");
+let value=searchBar.value.toLowerCase();
+let cards=document.querySelectorAll(".card");
 
-    const cards = document.querySelectorAll(".card");
-    searchBtn.addEventListener("click", filterJobs);
+cards.forEach(card=>{
 
-    function filterJobs() {
+let title=card.querySelector(".text p").innerText.toLowerCase();
+let desc=card.querySelector(".desc").innerText.toLowerCase();
+let el=card.querySelector(".eligibility").innerText.toLowerCase();
 
-        let headerText = headerSearch.value.toLowerCase();
-        let roleText = roleSelect.options[roleSelect.selectedIndex]?.text.toLowerCase() || "";
-        let skillText = skillInput.value.toLowerCase();
-        let companyText = companyInput.value.toLowerCase();
+if(title.includes(value) || desc.includes(value) || el.includes(value)){
+card.style.display="flex";
+}else{
+card.style.display="none";
+}
 
-        cards.forEach(card => {
+});
 
-            let cardText = card.innerText.toLowerCase();
-
-            let matchHeader = cardText.includes(headerText);
-            let matchRole = roleText === "--select--" || cardText.includes(roleText);
-            let matchSkill = cardText.includes(skillText);
-            let matchCompany = cardText.includes(companyText);
-
-            if (matchHeader && matchRole && matchSkill && matchCompany) {
-                card.style.display = "flex";
-            } else {
-                card.style.display = "none";
-            }
-
-        });
-
-    }
-
-    // Header search (live typing)
-    headerSearch.addEventListener("keyup", filterJobs);
-
-    // Form search button
-    searchBtn.addEventListener("click", filterJobs);
-
-
+});
 
 });
